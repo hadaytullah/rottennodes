@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" ng-app="nodestats">
+  <head>
+    <title>Node Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-responsive.min.css"-->
+    <link rel="stylesheet" href="main.css">
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+   
+    
+  </head>
+  <body>
+    <div class="container" ng-controller="ChatController">
+      <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+          <div class="pull-left">
+            <!--a href="/" class="brand">RottenNodes</a-->
+            <a href="/" class="navbar-brand">SpaghettiCode</a>
+          </div>
+        </div>
+      </div>
+      <div class="page-header">
+        <p>SpaghettiCode aggregates the openly available stats for code libraries. The intention is to facilitate programmers when chosing libraries for thier projects. </p>
+        <!-- h1>RottenNodes</h1-->
+      </div>
+      <div class="row">
+        <!--div class="col-md-8 offset-md-2"-->
+            <form class="form-horizontal" ng-submit="getStats()">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control input-lg" ng-model="libName" placeholder="Enter library name here.">
+                </div>
+                <div class="col-sm-2">
+                  <input type="submit" class="btn btn-info btn-lg btn-block" value="Search" ng-disabled="!libName">
+                </div>
+            </form>
+        <!--/div-->
+      </div>
+      
+  
+      
+      
+      <div class="row">
+        <!-- label>{{libGithubForks}}</label>
+        <label>{{libStats}}</label >
+        <label>{{libDetails}}</label-->
+        <label>{{message}}</label>
+      </div>
+      
+      <div class="row">
+        <canvas id="chart_overview"></canvas>  
+      </div>
+      
+      <!-- div class="">
+      </div>
+      <div class="stats_chart">
+        <canvas id="chart_downloads"></canvas>
+      </div>
+      <div class="stats_chart">
+        <canvas id="chart_fork"></canvas>
+      </div -->
+      <!--canvas id="chart_star" class="row stats_chart"></canvas>
+      <canvas id="chart_watch" class="row stats_chart"></canvas>
+      <canvas id="chart_questions" class="row stats_chart"></canvas-->
+    </div>
+    <!--script src="/socket.io/socket.io.js"></script-->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/js/Chart.bundle.js"></script>
+    <script src="/js/tc-angular-chartjs.js"></script>
+    <script src="controller.js"></script>
+  </body>
+</html>
